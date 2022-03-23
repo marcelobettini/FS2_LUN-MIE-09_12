@@ -1,7 +1,7 @@
 require("dotenv").config()
 const { findUserByID } = require("./functions")
 const port = process.env.port || 8000
-let users = require("./data/data")
+let users = require("./data/users")
 const express = require("express")
 const server = express()
 
@@ -26,13 +26,12 @@ server.get("/users/:id", (req, res, next) => {
     if (isNaN(Number(req.params.id))) {
         return res.status(400).json({ message: "ID must be a positive integer" })
     }
-    let userFound = findUserByID(+req.params.id, users)
+    const userFound = findUserByID(+req.params.id, users)
     if (userFound !== undefined) {
         res.status(200).json(userFound)
     } else {
         next()
     }
-
 });
 
 //post new user
