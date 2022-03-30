@@ -12,7 +12,9 @@ const data = require("./helpers/data")
 //pero en JS eso no existe, porque el procedimiento de búsqueda de datos, al ser asincrónico, va a demorar x tiempo en devolver el resultado, entonces, cuando muestre el resultado, seguramente aún no lo tendré disponible y eso dará como resultado undefined o un arreglo vacío, si es que así inicialicé el arreglo que recibirá los datos
 
 // const getData = () => {
-//     setTimeout(() => data, 2000)
+//     setTimeout(() => {
+//         return data
+//     }, 2000)
 // }
 // console.log(getData())
 
@@ -28,10 +30,17 @@ const getData = () => {
             } else {
                 resolve(data)
             }
-        }, 2000)
+        }, 3000)
     })
 }
 
+
 getData()
     .then((res) => console.log(res))
-    .catch((err) => console.log(err))
+    .catch((err) => console.log(err));
+
+console.log("Esto está después de la ejecución de getData, pero se verá antes... cool")
+console.log("Esto está después de la ejecución de getData, pero se verá antes... cool")
+console.log("Esto está después de la ejecución de getData, pero se verá antes... cool")
+console.log("Esto está después de la ejecución de getData, pero se verá antes... cool")
+console.log("Esto está después de la ejecución de getData, pero se verá antes... cool")
