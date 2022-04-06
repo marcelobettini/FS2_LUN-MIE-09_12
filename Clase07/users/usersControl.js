@@ -27,9 +27,12 @@ const editOne = async(req, res, next) => {
 
 //Register new user
 const register = async(req, res, next) => {
-    const password = await hashPassword(req.body.password)
-    const dbResponse = await registerUser({...req.body, password }) //ES6 password: password
-    dbResponse instanceof Error ? next(dbResponse) : res.status(201).json(`User ${req.body.name} created!`)
+    console.log("Objeto req.body:", req.body)
+    console.log("Objeto req.file:", req.file)
+    res.sendStatus(200)
+        // const password = await hashPassword(req.body.password)
+        // const dbResponse = await registerUser({...req.body, password }) //ES6 password: password
+        // dbResponse instanceof Error ? next(dbResponse) : res.status(201).json(`User ${req.body.name} created!`)
 }
 
 //Login user

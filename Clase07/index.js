@@ -30,7 +30,6 @@ server.use((req, res, next) => {
 //Error handler
 server.use((error, req, res, next) => {
     if (!error.status) error.status = 500;
-
     res.status(error.status).json({ status: error.status, message: error.message })
 })
 
