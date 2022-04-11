@@ -1,0 +1,20 @@
+{
+    "name": "clase08-intro-a-jwt",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    },
+    "type": "module",
+    "dependencies": {
+        "express": "^4.17.3",
+        "jsonwebtoken": "^8.5.1"
+    }
+}
