@@ -21,10 +21,10 @@ const getUserById = (id) => {
     }
 }
 
-const registerUser = (user) => {
+const registerUser = async (user) => {
     const query = `INSERT INTO users SET ?`
     try {
-        return pool.query(query, user)
+        return await pool.query(query, user)
     } catch (error) {
         error.message = error.code
         return error
