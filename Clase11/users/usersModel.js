@@ -1,20 +1,20 @@
 /* Aquí va el modelo de datos... consultas a bases de datos*/
 const pool = require("../data/config")
 
-const getAllUsers = () => {
+const getAllUsers = async () => {
     const query = "SELECT * FROM users"
     try {
-        return pool.query(query)
+        return await pool.query(query)
     } catch (error) {
         error.message = error.code
         return error
     }
 }
 
-const getUserById = (id) => {
+const getUserById = async (id) => {
     const query = `SELECT * FROM users WHERE id = ${id} LIMIT 1`
     try {
-        return pool.query(query)
+        return await pool.query(query)
     } catch (error) {
         error.message = error.code
         return error
@@ -31,20 +31,20 @@ const registerUser = async (user) => {
     }
 }
 
-const loginUser = (error) => {
+const loginUser = async (error) => {
     const query = `SELECT * FROM users WHERE email = '${error}'`
     try {
-        return pool.query(query)
+        return await pool.query(query)
     } catch (error) {
         error.message = error.code
         return error
     }
 }
 
-const editUserById = (id, user) => {
+const editUserById = async (id, user) => {
     const query = `UPDATE users SET ? WHERE id = ${id}`;
     try {
-        return pool.query(query, user)
+        return await pool.query(query, user)
     } catch (error) {
         error.message = error.code
         return error
@@ -52,10 +52,10 @@ const editUserById = (id, user) => {
 
 };
 
-const deleteUserById = (id) => {
+const deleteUserById = async (id) => {
     const query = `DELETE FROM users WHERE id = ${id}`
     try {
-        return pool.query(query)
+        return await pool.query(query)
     } catch (error) {
         error.message = error.code
         return error
