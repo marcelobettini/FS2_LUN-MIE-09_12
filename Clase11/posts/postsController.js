@@ -2,7 +2,7 @@ const { addNewPost, getPostsWith, getAllPosts } = require("./postsModel");
 
 const listAll = async (req, res, next) => {
   let dbResponse = null;
-  if (req.query.title) {
+  if (req.query.title) { //http://localhost:3030/posts?title=JavaScript este endpoint indica: req.query.title = JavaScript
     dbResponse = await getPostsWith(req.query.title);
   } else {
     dbResponse = await getAllPosts();
