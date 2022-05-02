@@ -12,3 +12,5 @@ api.listen(PORT, (err) => {
 
 //USERS ROUTING
 api.use("/users", require("./users/userRoute"))
+//POSTS ROUTING
+api.use("/posts", require("./posts/postRoute"))
