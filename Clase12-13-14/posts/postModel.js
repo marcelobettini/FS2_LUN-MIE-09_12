@@ -13,3 +13,4 @@ PostSchema.index({ title: "text" }) //crea un índice que permita buscar por tex
 
 const Post = mongoose.model("Post", PostSchema)
 module.exports = Post
+
