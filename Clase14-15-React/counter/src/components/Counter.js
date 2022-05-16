@@ -6,7 +6,6 @@ const Counter = ({ number, handleNumber }) => {
             <p>{number}</p>
             <button onClick={handleNumber} data-id="+">sumar</button>
             <button onClick={handleNumber} data-id="-">restar</button>
-
         </>
     )
 }
